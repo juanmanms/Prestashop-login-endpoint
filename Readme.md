@@ -40,7 +40,8 @@ curl -X POST https://your-prestashop-site.com/module/authenticationapi/authentic
 ```json
 {
   "token": "your-authentication-token",
-  "expiry_date": "2023-12-31T23:59:59Z"
+  "expiry_date": "2023-12-31T23:59:59Z", //puedes configurar el rango de tiempo
+  "Profile employed": 3
 }
 ```
 

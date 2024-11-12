@@ -11,9 +11,9 @@ class AuthenticationApi extends Module
         $this->name = 'authenticationapi';
         $this->tab = 'administration';
         $this->version = '1.0.0';
-        $this->author = 'Tu Nombre';
+        $this->author = 'Juanmanms';
         $this->need_instance = 0;
-        $this->ps_versions_compliancy = ['min' => '1.7', 'max' => _PS_VERSION_];
+        $this->ps_versions_compliancy = ['min' => '1.6', 'max' => _PS_VERSION_];
         $this->bootstrap = true;
 
         parent::__construct();
@@ -53,20 +53,5 @@ class AuthenticationApi extends Module
     {
         $sql = "DROP TABLE IF EXISTS `" . _DB_PREFIX_ . "authentication_token`;";
         return Db::getInstance()->execute($sql);
-    }
-
-    public function hookModuleRoutes($params)
-    {
-        return [
-            'module-authenticationapi-authenticate' => [
-                'rule' => 'api/authenticate',
-                'keywords' => [],
-                'controller' => 'authenticate',
-                'params' => [
-                    'fc' => 'module',
-                    'module' => $this->name,
-                ],
-            ],
-        ];
     }
 }

@@ -22,7 +22,6 @@ class AuthenticationApiAuthenticateModuleFrontController extends ModuleFrontCont
 
         $employee = new Employee();
         if (!$employee->getByEmail($email, $password)) {
-            error_log(print_r($employee, true));
             http_response_code(401);
             echo json_encode(['error' => 'Credenciales inválidas']);
             return;
@@ -30,7 +29,7 @@ class AuthenticationApiAuthenticateModuleFrontController extends ModuleFrontCont
 
         // Generar token y guardarlo
         $token = bin2hex(random_bytes(32));
-        $expiryDate = date('Y-m-d H:i:s', strtotime('+1 hour'));
+        $expiryDate = date('Y-m-d H:i:s', strtotime('+12 hour'));
 
         Db::getInstance()->insert('authentication_token', [
             'id_employee' => $employee->id,
@@ -38,6 +37,8 @@ class AuthenticationApiAuthenticateModuleFrontController extends ModuleFrontCont
             'expiry_date' => $expiryDate,
         ]);
 
-        echo json_encode(['token' => $token, 'expiry_date' => $expiryDate,]);
+        http_response_code(200);
+
+        echo json_encode(['token' => $token, 'expiry_date' => $expiryDate,  'Profile employed' => $employee->id_profile]);
     }
 }
