@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>authenticationapi</name>
+    <displayName>API de Autenticación para Empleados</displayName>
+    <version>1.0.0</version>
+    <author>Juanmanms</author>
+    <description>Proporciona un endpoint para autenticar empleados y devolver un token de sesión.</description>
+    <tab>administration</tab>
+    <compatibility>
+        <minVersion>1.7.0.0</minVersion>
+        <maxVersion>8.1.99.99</maxVersion>
+    </compatibility>
+</module>
