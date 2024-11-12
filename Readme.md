@@ -17,12 +17,7 @@ The Authentication API module for PrestaShop provides an API for user authentica
 2. Upload the module to the `/modules` directory of your PrestaShop installation.
 3. Go to the PrestaShop admin panel and navigate to `Modules` > `Module Manager`.
 4. Find the Authentication API module and click `Install`.
-
-## Configuration
-
-1. After installation, go to the module configuration page.
-2. Set up the necessary API keys and security settings.
-3. Save the configuration.
+5. You can now use the endpoint
 
 ## Usage
 
@@ -51,7 +46,7 @@ curl -X POST https://your-prestashop-site.com/module/authenticationapi/authentic
 
 ## Support
 
-For any issues or questions, please contact our support team at support@example.com.
+For any issues or questions, please contact our support team at juanmanms@gmail.com
 
 ## License
 
