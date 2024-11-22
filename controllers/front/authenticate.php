@@ -63,7 +63,7 @@ try {
     ]);
 
     http_response_code(200);
-    echo json_encode(['token' => $token, 'expiry_date' => $expiryDate, 'ProfileEmployed' => $employee->id_profile, 'id_employee' => $employee->id]);
+    echo json_encode(['token' => $token, 'expiry_date' => $expiryDate, 'ProfileEmployed' => $employee->id_profile, 'id_employee' => $employee->id, 'name' => $employee->firstname]);
     exit();
 } catch (Exception $e) {
     error_log($e->getMessage()); // Registrar el error en el log del servidor
